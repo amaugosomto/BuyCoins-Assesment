@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="copyright" content="This BuyCoins Assessment is owned by Somto Amaugo aka pandadev" />
+  <meta name="description" content="This BuyCoins assessment aims to deep clone the repository tab of my github page">
+  <meta name="robots" content="index">
+  <title>BuyCoins Assessment</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+    integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="header-item d-none d-md-flex">
+      <a href="javascript:void(0);" class="icon">
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32"
+          aria-hidden="true">
+          <path fill-rule="evenodd" fill="white"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-item d-none d-sm-flex">
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24"
+          aria-hidden="true" fill="white">
+          <path fill-rule="evenodd"
+            d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-item d-none nav-links">
+      <div>
+        <div class="input-wrapper">
+          <input type="text" class="form-control" placeholder="Search or jump to...">
+          <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="search-image">
+        </div>
+      </div>
+      <nav>
+        <a href="#" class="d-md-none">Dashboard</a>
+        <a href="#">Pull<span class="d-md-none d-lg-flex"> request</span>s</a>
+        <a href="#">Issues</a>
+        <a href="#">Marketplace</a>
+        <a href="#">Explore</a>
+        <a href="#" class="d-md-none">Settings</a>
+        <a href="#" id="imgLink" class="d-md-none">
+          <img style="height:auto;" alt="" width="260" height="260"
+            class="avatar avatar-user width-full border bg-white"
+            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+          amaugosomto
+        </a>
+        <a href="#" id="signput" class="d-md-none">
+          <i class="fas fa-sign-out-alt"></i>
+          Sign out
+        </a>
+      </nav>
+    </div>
+
+    <div class="header-item d-none">
+
+    </div>
+
+    <div class="header-item d-none d-sm-flex">
+      <a class="Header-link " href="#">
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32"
+          aria-hidden="true">
+          <path fill-rule="evenodd" fill="white"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-item" id="notifs">
+      <a href="#" class="header-link p-relative">
+        <span class="p-absolute" id="notifExist"></span>
+        <i class="far fa-bell" style="font-size: 1.2rem;color: #fff;"></i>
+      </a>
+    </div>
+
+    <div class="header-item d-none d-md-flex" id="repoOptions">
+      <div class="dropdown">
+        <a href="javascript:void(0);" class="headerFirstDrop" onclick="openDrop(event)">
+          <i class="fas fa-plus headerFirstDrop"></i> <i class="fas fa-caret-down headerFirstDrop"></i>
+        </a>
+        <div class="dropdown-content" id="headerFirstDropCont">
+          <div class="dropContents">
+            <a href="#">
+              New repository
+            </a>
+            <a href="#">
+              Import repository
+            </a>
+            <a href="#">
+              New gist
+            </a>
+            <a href="#">
+              New organization
+            </a>
+            <a href="#">
+              New project
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-link d-none d-md-flex" id="profileOptions">
+      <div class="dropdown">
+        <a href="javascript:void(0);" class="headerSecondDrop" onclick="openDrop(event)">
+          <img alt="" class="responsive headerSecondDrop"
+            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+          <i class="fas fa-caret-down headerSecondDrop"></i>
+        </a>
+        <div class="dropdown-content" id="headerSecondDropCont">
+          <div class="dropHeader">
+            <a href="javascript:void(0);">
+              Signed in as <span>amaugosomto</span>
+            </a>
+          </div>
+          <div class="dropContents">
+            <div>
+              <a href="#">
+                <span> <span>🎯</span> Focusing</span>
+              </a>
+            </div>
+            <div style="padding-bottom: .5rem;">
+              <a href="#">
+                Your profile
+              </a>
+              <a href="#">
+                Your repositories
+              </a>
+              <a href="#">
+                Your organizations
+              </a>
+              <a href="#">
+                Your projects
+              </a>
+              <a href="#">
+                Your stars
+              </a>
+              <a href="#">
+                Your gists
+              </a>
+            </div>
+            <div style="padding-top: .5rem;">
+              <a href="#">
+                Upgrade
+              </a>
+              <a href="#">
+                Feature preview
+              </a>
+              <a href="#">
+                Help
+              </a>
+              <a href="#">
+                Settings
+              </a>
+              <a href="#">
+                Sign out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="secondaryNav container d-sm-none" id="firstSecondaryNav">
+      <div>
+        <img alt="" class="responsive" src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+        <span>amaugosomto</span>
+      </div>
+      <div>
+        <a href="#">
+          <i class="fas fa-book-open"></i>
+          Overview
+        </a>
+        <a href="#">
+          <i class="fas fa-book"></i>
+          Repositories
+          <span>15</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-chart-bar" id="invert"></i>
+          Projects
+        </a>
+        <a href="#">
+          <i class="fab fa-unity" id="unity"></i>
+          Packages
+        </a>
+      </div>
+    </section>
+
+    <section id="mainBody">
+      <section id="highlights" class="container">
+        <div id="info">
+          <div>
+            <img alt="" class="responsive" class="avatar avatar-user width-full border bg-white"
+            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+            <a href="#" class="d-sm-none focus">
+              🎯
+              <span>Focusing span</span>
+            </a>
+          </div>
+          
+          <div>
+            <span id="mainName">Amaugo Somto</span>
+            <span id="username">amaugosomto</span>
+          </div>
+        </div>
+  
+        <div id="profileInfo">
+          <a href="#" class="d-md-none">
+            <span>🎯</span>
+            Focusing
+          </a>
+  
+          <span class="caption">A developer always looking to learn more and gain more experience. Full Stack
+            developer.</span>
+  
+          <a href="#" id="profile">Edit profile</a>
+  
+          <div>
+            <a href="#">
+              <i class="fas fa-user-friends"></i>
+              <span>4</span> followers
+            </a>
+            .
+            <a href="#">
+              <span>6</span> following
+            </a>
+            .
+            <a href="#">
+              <i class="far fa-star"></i>
+              <span>2</span>
+            </a>
+          </div>
+
+          <div class="d-sm-none">
+            <i class="fas fa-map-marker-alt"></i> Nigeria
+          </div>
+        </div>
+
+        <div id="other" class="d-sm-none">
+          
+          <div id="innerHighlight" class="d-sm-none">
+            <h3>Highlights</h3>
+            <h5><i class="fas fa-snowflake"></i> Artic Code Vault Contributor</h5>
+          </div>
+
+          <div id="organization" class="d-sm none">
+            <h3>Organizations</h3>
+            <img alt="@BuildForSDG" width="32" height="32" src="https://avatars3.githubusercontent.com/u/62082237?s=60&amp;v=4" class="avatar ">
+          </div>
+        </div>
+
+      </section>
+      
+      <div>
+        <section class="secondaryNav d-md-none">
+          <div>
+            <a href="#">
+              <i class="fas fa-book-open"></i>
+              Overview
+            </a>
+            <a href="#">
+              <i class="fas fa-book"></i>
+              Repositories
+              <span>15</span>
+            </a>
+            <a href="#">
+              <i class="fas fa-chart-bar" id="invert"></i>
+              Projects
+            </a>
+            <a href="#">
+              <i class="fab fa-unity" id="unity"></i>
+              Packages
+            </a>
+          </div>
+        </section>
+    
+        <section id="repos" class="container">
+          <div>
+            <div id="inputWrapper">
+              <input type="text" class="form-control" placeholder="Find a repository...">
+            </div>
+    
+            <div id="bodyDrops">
+              <div>
+                <div class="dropdown">
+                  <a href="javascript:void(0);" class="firstDrop" onclick="openDrop(event)">
+                    Type: <span class="firstDrop">All <i class="fas fa-caret-down firstDrop"></i></span>
+                  </a>
+                  <div class="dropdown-content" id="firstDropCont">
+                    <div class="dropHeader">
+                      <span>Select type</span>
+                      <a href="javascript:void(0);" onclick="hideAllContent">
+                        <i class="fas fa-times"></i>
+                      </a>
+                    </div>
+                    <div class="dropContents">
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        All
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Public
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Private
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Sources
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Forks
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Archived
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Mirrors
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="dropdown">
+                  <a class="secondDrop" href="javascript:void(0);" onclick="openDrop(event)">
+                    Language: <span class="secondDrop">All <i class="fas fa-caret-down secondDrop"></i></span>
+                  </a>
+                  <div class="dropdown-content" id="secondDropCont">
+                    <div class="dropHeader">
+                      <span>Select Language</span>
+                      <a href="javascript:void(0);" onclick="hideAllContent">
+                        <i class="fas fa-times"></i>
+                      </a>
+                    </div>
+                    <div class="dropContents">
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        All
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        JavaScript
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        Vue
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        HTML
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        C#
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        CSS
+                      </a>
+                      <a href="#">
+                        <i class="fas fa-check"></i>
+                        TypeScript
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <button>
+                <i class="fas fa-book"></i>
+                New
+              </button>
+            </div>
+          </div>
+          <div id="individualRepos">
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">SVGBuilder</a>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span class="blue"></span>
+                    <span>Vue</span>
+                  </span>
+    
+                  <span>
+                    Updated 14 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">IGofer-Api</a>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+                  <span>
+                    <a href="#">
+                      <i class="fas fa-code-branch"></i>
+                      1
+                    </a>
+                  </span>
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">BuildForSDG</a>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+                  <span>
+                    <i class="fas fa-balance-scale"></i>
+                    MIT License
+                  </span>
+                  <span>
+                    Updated on 20 Jul
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">BuildForSDGUI</a>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span class="red"></span>
+                    <span>HTML</span>
+                  </span>
+                  <span>
+                    Updated on 13 Apr
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">foodie</a>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span class="green"></span>
+                    <span>C#</span>
+                  </span>
+    
+                  <span>
+                    Updated on 22 Jan
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+    
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">albinotonnina.com</a>
+                </h3>
+                <span>
+                  Forked from <a href="#">albinotonnina/albinotonnina.com</a>
+                </span>
+                <span>
+                  source-code
+                </span>
+                <div>
+                  <span>
+                    <span class="purple"></span>
+                    <span>CSS</span>
+                  </span>
+                  <span>
+                    <a href="#">
+                      <i class="fas fa-code-branch"></i>
+                      167
+                    </a>
+                  </span>
+                  <span>
+                    <i class="fas fa-balance-scale"></i>
+                    Other
+                  </span>
+                  <span>
+                    Updated on 20 Jan
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+            <div>
+              <div class="repoDetails">
+                <h3>
+                  <a href="#">mailgimp</a>
+                  <span>Private</span>
+                </h3>
+    
+                <div>
+                  <span>
+                    <span></span>
+                    <span>JavaScript</span>
+                  </span>
+    
+                  <span>
+                    Updated 12 days ago
+                  </span>
+                </div>
+              </div>
+    
+              <div class="star">
+                <a href="#">
+                  <i class="far fa-star"></i>
+                  Star
+                </a>
+              </div>
+    
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>&copy; 2020 GitHub, Inc</span>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Status</a>
+        <a href="#">Help</a>
+        <a href="#">Contact Github</a>
+        <a href="#">Pricing</a>
+        <a href="#">API</a>
+        <a href="#">Training</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+      </div>
+
+    </footer>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

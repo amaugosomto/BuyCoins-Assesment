@@ -1,0 +1,845 @@
+body {
+  font-family: "Segoe UI";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transition: all 1s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  min-width: 160px;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.reponsive {
+  width: 100%;
+  height: 50px;
+}
+
+header {
+  background: #24292E;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+header .dropdown > a {
+  color: #fff;
+}
+header .dropdown-content {
+  border: 0;
+  border: 1px solid rgba(211, 211, 211, 0.8);
+  box-shadow: 0 0 0 2px rgba(211, 211, 211, 0.2);
+  border-radius: 9px;
+  left: -130px;
+  width: 90px;
+  z-index: 4;
+}
+header .dropdown-content .dropContents {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+header .dropdown-content .dropContents::before {
+  top: -16px;
+  right: 9px;
+  left: auto;
+  border: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  position: absolute;
+  display: inline-block;
+  content: "";
+}
+header .dropdown-content .dropContents a {
+  padding: 0.5rem 1rem;
+  color: rgba(74, 67, 67, 0.8);
+  font-size: 0.9rem;
+}
+header .dropdown-content .dropContents a:hover {
+  background: #0366d6;
+  color: #fff;
+}
+header #profileOptions img {
+  width: 1.3rem;
+  border-radius: 50%;
+}
+header #profileOptions .dropdown-content {
+  left: -160px;
+  width: 190px !important;
+}
+header #profileOptions .dropHeader {
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 400;
+  border-bottom: 0.1px solid rgba(211, 211, 211, 0.6);
+}
+header #profileOptions .dropHeader a {
+  color: #544e4e;
+  font-size: 1rem;
+}
+header #profileOptions .dropHeader a span {
+  font-weight: 700;
+}
+header #profileOptions .dropContents div {
+  display: flex;
+  flex-direction: column;
+  border-top: 0.1px solid rgba(211, 211, 211, 0.6);
+}
+header #profileOptions .dropContents div a {
+  font-size: 0.9rem;
+}
+header #profileOptions .dropContents div:first-of-type {
+  border: 0;
+}
+header #profileOptions .dropContents div:first-of-type a {
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+header #profileOptions .dropContents div:first-of-type a > span {
+  width: 100%;
+  padding: 0.3rem 0.7rem;
+  border: 0.1px solid rgba(211, 211, 211, 0.6);
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+header #profileOptions .dropContents div:first-of-type a:hover {
+  background: #fff;
+  color: #0366d6;
+}
+
+.d-none {
+  display: none;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+#notifExist {
+  width: 0.6em;
+  height: 0.6em;
+  top: -6px;
+  left: 8px;
+  z-index: 2;
+  background: #006eed;
+  border-radius: 50%;
+}
+
+.nav-links {
+  margin-top: 10px;
+  order: 2;
+  flex-basis: 100%;
+}
+
+.input-wrapper {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  color: #fff;
+  border: 0.1px solid rgba(211, 211, 211, 0.3);
+  box-shadow: none;
+  border-radius: 7px;
+  position: relative;
+}
+
+.header-item {
+  margin-right: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  height: 28px;
+  padding: 0 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  display: table-cell;
+  font-size: 0.9rem;
+  color: inherit;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+.form-control::placeholder {
+  color: #d3d3d3;
+}
+
+header .form-control:focus {
+  background-color: #fff;
+  border: 0px;
+  width: 100%;
+}
+header .form-control:focus::placeholder {
+  color: #656565;
+}
+header .form-control:focus + .search-image {
+  display: none;
+}
+
+.search-image {
+  margin-right: 0.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 1em;
+}
+nav a {
+  padding: 0.5em;
+  border-top: 0.1px solid rgba(211, 211, 211, 0.3);
+  color: white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  font-style: normal;
+  width: 100%;
+}
+nav a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+nav a img {
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#firstSecondaryNav {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+#firstSecondaryNav div:first-of-type {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+#firstSecondaryNav div:first-of-type img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+#firstSecondaryNav div:first-of-type span {
+  padding: 0 0 0.4rem;
+  border-radius: 0;
+  background: transparent;
+  margin-left: 0;
+}
+#firstSecondaryNav div:first-of-type * {
+  display: none;
+}
+
+#imgLink {
+  display: flex;
+  align-content: center;
+}
+
+#highlights {
+  margin-bottom: 30px;
+}
+
+#info {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+}
+#info img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+#info div:not(:nth-child(1)) {
+  display: flex;
+  flex-direction: column;
+}
+#info div:not(:nth-child(1)) #mainName {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 33px;
+  color: #24292e;
+}
+#info div:not(:nth-child(1)) #username {
+  font-size: 20px;
+  line-height: 24px;
+  color: #586069;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+#profileInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+#profileInfo > a {
+  border: 0.1px solid rgba(211, 211, 211, 0.8);
+  padding: 0.4rem;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+#profileInfo > a:nth-child(1) {
+  flex-basis: 100%;
+}
+#profileInfo > a:nth-child(1):hover {
+  color: #006eed;
+}
+#profileInfo > a:nth-child(1) span {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+#profileInfo .caption {
+  font-size: 1rem;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+#profileInfo #profile {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(211, 211, 211, 0.3);
+  margin-bottom: 20px;
+}
+#profileInfo #profile:hover {
+  background: rgba(211, 211, 211, 0.6);
+}
+#profileInfo div {
+  margin-bottom: 1px;
+  display: flex;
+  align-items: flex-start;
+}
+#profileInfo div a {
+  color: #000;
+  margin: 0 4px;
+  font-size: 0.9rem;
+}
+#profileInfo div a span {
+  font-weight: 600;
+}
+#profileInfo div a:hover {
+  color: #006eed;
+}
+
+.secondaryNav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 3;
+  border-bottom: 0.1px solid rgba(211, 211, 211, 0.9);
+}
+.secondaryNav div {
+  padding: 1rem 1.5rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+.secondaryNav a {
+  color: #24292E;
+  padding: 0 1rem 1rem;
+  font-size: 0.8rem;
+  display: flex;
+}
+.secondaryNav a i {
+  margin-right: 5px;
+  font-size: 1.1rem;
+  display: none;
+}
+.secondaryNav a:hover {
+  border-bottom: 2px solid lightgray;
+}
+.secondaryNav span {
+  padding: 0.1px 0.4rem;
+  border-radius: 40%;
+  background: rgba(211, 211, 211, 0.9);
+  margin-left: 5px;
+}
+.secondaryNav a:nth-child(2) {
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.6);
+}
+.secondaryNav a:nth-child(3) i {
+  transform: rotate(180deg);
+  font-weight: 100;
+}
+.secondaryNav a:nth-child(4) i {
+  transform: rotate(30deg);
+  font-weight: 100;
+}
+
+#repos {
+  padding-top: 1.3rem;
+}
+#repos > div:not(:first-of-type) {
+  padding-bottom: 1rem;
+}
+#repos > div:first-of-type {
+  border-bottom: 0.1px solid rgba(211, 211, 211, 0.9);
+}
+#repos input {
+  border: 0.1px solid rgba(211, 211, 211, 0.9);
+  box-shadow: none;
+  outline: none;
+  height: 30px;
+}
+#repos input::placeholder {
+  color: #4e4a4a;
+  font-size: 0.8rem;
+}
+#repos input:focus {
+  box-shadow: 0 0 0 4px rgba(0, 110, 237, 0.3);
+  border: 1px solid rgba(0, 110, 237, 0.8);
+}
+#repos #bodyDrops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+#repos #bodyDrops button {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 5px;
+  background: #2C974B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  border: 0;
+}
+#repos #bodyDrops button i {
+  margin-right: 5px;
+}
+#repos .dropdown > a {
+  cursor: pointer;
+  font-weight: 500;
+  color: rgba(63, 61, 61, 0.9);
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 0.1px solid rgba(211, 211, 211, 0.9);
+  background: rgba(211, 211, 211, 0.3);
+  border-radius: 5px;
+  margin-right: 3px;
+}
+#repos .dropdown > a span {
+  font-weight: 600;
+  color: #000;
+}
+#repos .dropdown > a span i {
+  margin-left: 5px;
+}
+#repos .dropdown .dropdown-content {
+  width: 250px;
+  border: 0.1px solid rgba(211, 211, 211, 0.9);
+  transition: all 1s ease;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 9px;
+  left: -10px;
+}
+#repos .dropdown .dropdown-content .dropHeader {
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 700;
+}
+#repos .dropdown .dropdown-content .dropHeader a {
+  color: lightgray;
+  font-size: 1rem;
+}
+#repos .dropdown .dropdown-content .dropContents {
+  display: flex;
+  flex-direction: column;
+}
+#repos .dropdown .dropdown-content .dropContents a {
+  border-top: 0.1px solid rgba(211, 211, 211, 0.9);
+  padding: 0.6rem 1.1rem;
+  color: rgba(68, 64, 64, 0.9);
+  font-size: 0.8rem;
+}
+#repos .dropdown .dropdown-content .dropContents a i {
+  min-width: 16px;
+  margin-right: 10px;
+}
+#repos .dropdown .dropdown-content .dropContents a:not(:nth-child(1)) i {
+  color: #fff;
+}
+#repos .dropdown .dropdown-content .dropContents a:hover {
+  background: rgba(211, 211, 211, 0.3);
+}
+#repos .dropdown .dropdown-content .dropContents a:hover:not(:nth-child(1)) i {
+  color: rgba(211, 211, 211, 0.3);
+}
+
+#individualRepos > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.4rem 0;
+  border-bottom: 0.1px solid rgba(211, 211, 211, 0.9);
+}
+#individualRepos h3 {
+  font-size: 1.3rem;
+}
+#individualRepos h3 a {
+  color: #0366d6;
+  line-height: 30px;
+  font-weight: 600;
+}
+#individualRepos h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+#individualRepos h3 span {
+  font-size: 0.75rem;
+  border: 0.1px solid lightgray;
+  padding: 0.1rem 0.7rem;
+  border-radius: 30px;
+  margin-left: 4px;
+  color: rgba(31, 27, 27, 0.8);
+}
+#individualRepos .repoDetails {
+  display: flex;
+  flex-direction: column;
+}
+#individualRepos .repoDetails > span {
+  font-size: 0.7rem;
+  line-height: 10pxs;
+  margin-top: 5px;
+}
+#individualRepos .repoDetails > span a {
+  color: #000;
+}
+#individualRepos .repoDetails div {
+  margin-top: 1rem;
+}
+#individualRepos .repoDetails div span {
+  margin-right: 4px;
+  font-size: 0.75rem;
+  color: #414040;
+}
+#individualRepos .repoDetails div span > span:nth-child(1) {
+  width: 11px;
+  height: 11px;
+  background: #f1e05a;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  border: 1px solid rgba(31, 27, 27, 0.4);
+  border-radius: 50%;
+  margin: 0;
+}
+#individualRepos .repoDetails a:hover {
+  color: #0366d6;
+}
+#individualRepos .star a {
+  padding: 0.2rem 0.9rem;
+  border: 0.1px solid lightgray;
+  background: rgba(211, 211, 211, 0.3);
+  border-radius: 5px;
+  font-weight: 600;
+  color: #000;
+  font-size: 0.8rem;
+}
+#individualRepos .star a:hover {
+  background: rgba(211, 211, 211, 0.5);
+}
+
+footer {
+  padding-bottom: 3rem;
+  margin-top: 20px;
+}
+footer div {
+  padding: 2rem 1.3rem;
+  border-top: 0.1px solid rgba(211, 211, 211, 0.9);
+  font-size: 0.75rem;
+  line-height: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+footer div * {
+  margin-right: 15px;
+  margin-top: 2px;
+}
+footer div span {
+  color: rgba(79, 71, 71, 0.7);
+}
+footer div a {
+  color: #0366d6;
+}
+footer div a:hover {
+  text-decoration: underline;
+}
+
+.blue {
+  background: #586069 !important;
+}
+
+.red {
+  background: #e34c26 !important;
+}
+
+.green {
+  background: #178600 !important;
+}
+
+.purple {
+  background: #563d7c !important;
+}
+
+@media screen and (min-width: 500px) {
+  .secondaryNav div {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 767px) {
+  .d-sm-flex {
+    display: flex !important;
+  }
+
+  .d-sm-none {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+
+  .d-md-flex {
+    display: flex !important;
+  }
+
+  .d-md-none {
+    display: none !important;
+  }
+
+  header {
+    justify-content: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    order: 0;
+    flex-basis: auto;
+    align-items: center;
+    margin-top: 0;
+  }
+  .nav-links nav {
+    margin-top: 0;
+    margin-left: 1.2rem;
+    flex-direction: inherit;
+  }
+  .nav-links nav a {
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-links nav a * {
+    margin-left: 5px;
+  }
+
+  .input-wrapper {
+    width: 260px;
+  }
+
+  #notifs {
+    margin-left: auto;
+  }
+  #notifs i {
+    font-size: 0.9rem;
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  .secondaryNav div {
+    overflow-x: hidden;
+  }
+  .secondaryNav a i {
+    display: block;
+  }
+
+  #info {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  #info div:first-of-type {
+    position: relative;
+  }
+  #info img {
+    width: 100%;
+    z-index: 3;
+    position: relative;
+  }
+  #info .focus {
+    position: absolute;
+    z-index: 3;
+    left: 80%;
+    bottom: 20%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background: #fff;
+    border-radius: 2em;
+    display: flex;
+    border: 0.1px solid lightgray;
+  }
+  #info .focus span {
+    display: none;
+    margin-left: 10px;
+    font-size: 0.7rem;
+    color: #0366d6;
+  }
+  #info a:hover span {
+    display: block;
+  }
+
+  #highlights {
+    margin-top: -30px;
+  }
+
+  #profileInfo {
+    margin: 20px 0;
+    padding-bottom: 1rem;
+    border-bottom: 0.1px solid lightgray;
+  }
+  #profileInfo div:first-of-type {
+    flex-wrap: wrap;
+    font-size: 1rem;
+  }
+  #profileInfo div:not(:first-of-type) {
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    color: #7f7777;
+  }
+  #profileInfo div:not(:first-of-type) i {
+    margin-right: 0.4rem;
+  }
+
+  #other {
+    font-size: 0.9rem;
+  }
+  #other #innerHighlight {
+    padding-bottom: 1rem;
+    border-bottom: 0.1px solid lightgray;
+  }
+  #other #innerHighlight h3 {
+    font-weight: 600;
+  }
+  #other #innerHighlight h5 {
+    margin-top: 10px;
+    color: #7f7777;
+    font-size: 0.9rem;
+  }
+  #other #organization h3 {
+    padding-top: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  #repos > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+  }
+  #repos #bodyDrops {
+    padding-top: 0;
+  }
+  #repos #bodyDrops > div {
+    display: flex;
+  }
+  #repos .form-control {
+    height: 37px;
+  }
+  #repos .dropdown a, #repos .dropdown a span {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  #repos #inputWrapper {
+    flex: auto;
+    margin-right: 10px;
+  }
+
+  #mainBody {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+
+  .dropdown {
+    margin-right: 10px;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  #repoOptions {
+    margin-right: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .d-lg-flex {
+    display: inline !important;
+  }
+}
+@media (min-width: 1366px) {
+  .container {
+    padding: 0 5rem;
+  }
+
+  #repos {
+    padding-left: 2rem;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  #highlights {
+    padding-right: 0;
+  }
+}
