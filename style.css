@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 * {
@@ -569,6 +569,37 @@ nav a img {
 #individualRepos .repoDetails a:hover {
   color: #0366d6;
 }
+#individualRepos .shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+#individualRepos box {
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
 #individualRepos .star a {
   padding: 0.2rem 0.9rem;
   border: 0.1px solid lightgray;
@@ -624,6 +655,10 @@ footer div a:hover {
 
 .purple {
   background: #563d7c !important;
+}
+
+.darkgreen {
+  background: #2B7489 !important;
 }
 
 @media screen and (min-width: 500px) {
@@ -730,6 +765,7 @@ footer div a:hover {
     margin-left: 10px;
     font-size: 0.7rem;
     color: #0366d6;
+    white-space: nowrap;
   }
   #info a:hover span {
     display: block;
@@ -832,6 +868,11 @@ footer div a:hover {
 
   footer div {
     justify-content: space-between;
+  }
+
+  #individualRepos .repoDetails div span {
+    margin-right: 9px;
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 1366px) {

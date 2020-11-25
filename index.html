@@ -55,7 +55,7 @@
         <a href="#" id="imgLink" class="d-md-none">
           <img style="height:auto;" alt="" width="260" height="260"
             class="avatar avatar-user width-full border bg-white"
-            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+            src="./emptyPic.png">
           amaugosomto
         </a>
         <a href="#" id="signput" class="d-md-none">
@@ -117,8 +117,8 @@
     <div class="header-link d-none d-md-flex" id="profileOptions">
       <div class="dropdown">
         <a href="javascript:void(0);" class="headerSecondDrop" onclick="openDrop(event)">
-          <img alt="" class="responsive headerSecondDrop"
-            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+          <img alt="" class="responsive headerSecondDrop avatar-user"
+            src="./emptyPic.png">
           <i class="fas fa-caret-down headerSecondDrop"></i>
         </a>
         <div class="dropdown-content" id="headerSecondDropCont">
@@ -190,7 +190,7 @@
         <a href="#">
           <i class="fas fa-book"></i>
           Repositories
-          <span>15</span>
+          <span class="repoCount"></span>
         </a>
         <a href="#">
           <i class="fas fa-chart-bar" id="invert"></i>
@@ -207,49 +207,44 @@
       <section id="highlights" class="container">
         <div id="info">
           <div>
-            <img alt="" class="responsive" class="avatar avatar-user width-full border bg-white"
-            src="https://avatars2.githubusercontent.com/u/30838087?s=460&amp;u=ca77c75db857674353b2e39c16c5c17c037438bf&amp;v=4">
+            <img alt="" class="responsive avatar-user"
+            src="./emptyPic.png">
             <a href="#" class="d-sm-none focus">
-              🎯
-              <span>Focusing span</span>
             </a>
           </div>
           
           <div>
-            <span id="mainName">Amaugo Somto</span>
-            <span id="username">amaugosomto</span>
+            <span id="mainName"></span>
+            <span id="username"></span>
           </div>
         </div>
   
         <div id="profileInfo">
-          <a href="#" class="d-md-none">
-            <span>🎯</span>
-            Focusing
+          <a href="#" class="d-md-none focus">
           </a>
   
-          <span class="caption">A developer always looking to learn more and gain more experience. Full Stack
-            developer.</span>
+          <span class="caption"></span>
   
           <a href="#" id="profile">Edit profile</a>
   
           <div>
-            <a href="#">
+            <a href="#" id="followers">
               <i class="fas fa-user-friends"></i>
-              <span>4</span> followers
+              Followers
             </a>
             .
-            <a href="#">
-              <span>6</span> following
+            <a href="#" id="following">
+              <span></span> following
             </a>
             .
-            <a href="#">
+            <a href="#" id="stars">
               <i class="far fa-star"></i>
-              <span>2</span>
+              <span></span>
             </a>
           </div>
 
-          <div class="d-sm-none">
-            <i class="fas fa-map-marker-alt"></i> Nigeria
+          <div class="d-sm-none" id="location">
+            <i class="fas fa-map-marker-alt"></i>
           </div>
         </div>
 
@@ -278,7 +273,7 @@
             <a href="#">
               <i class="fas fa-book"></i>
               Repositories
-              <span>15</span>
+              <span class="repoCount"></span>
             </a>
             <a href="#">
               <i class="fas fa-chart-bar" id="invert"></i>
@@ -397,431 +392,21 @@
           </div>
           <div id="individualRepos">
             <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
+              <box class="shine"></box>
             </div>
     
             <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">SVGBuilder</a>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span class="blue"></span>
-                    <span>Vue</span>
-                  </span>
-    
-                  <span>
-                    Updated 14 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
+              <box class="shine"></box>
             </div>
     
             <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">IGofer-Api</a>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-                  <span>
-                    <a href="#">
-                      <i class="fas fa-code-branch"></i>
-                      1
-                    </a>
-                  </span>
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
+              <box class="shine"></box>
             </div>
     
             <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">BuildForSDG</a>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-                  <span>
-                    <i class="fas fa-balance-scale"></i>
-                    MIT License
-                  </span>
-                  <span>
-                    Updated on 20 Jul
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
+              <box class="shine"></box>
             </div>
     
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">BuildForSDGUI</a>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span class="red"></span>
-                    <span>HTML</span>
-                  </span>
-                  <span>
-                    Updated on 13 Apr
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-    
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">foodie</a>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span class="green"></span>
-                    <span>C#</span>
-                  </span>
-    
-                  <span>
-                    Updated on 22 Jan
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-    
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">albinotonnina.com</a>
-                </h3>
-                <span>
-                  Forked from <a href="#">albinotonnina/albinotonnina.com</a>
-                </span>
-                <span>
-                  source-code
-                </span>
-                <div>
-                  <span>
-                    <span class="purple"></span>
-                    <span>CSS</span>
-                  </span>
-                  <span>
-                    <a href="#">
-                      <i class="fas fa-code-branch"></i>
-                      167
-                    </a>
-                  </span>
-                  <span>
-                    <i class="fas fa-balance-scale"></i>
-                    Other
-                  </span>
-                  <span>
-                    Updated on 20 Jan
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
-            <div>
-              <div class="repoDetails">
-                <h3>
-                  <a href="#">mailgimp</a>
-                  <span>Private</span>
-                </h3>
-    
-                <div>
-                  <span>
-                    <span></span>
-                    <span>JavaScript</span>
-                  </span>
-    
-                  <span>
-                    Updated 12 days ago
-                  </span>
-                </div>
-              </div>
-    
-              <div class="star">
-                <a href="#">
-                  <i class="far fa-star"></i>
-                  Star
-                </a>
-              </div>
-    
-            </div>
           </div>
         </section>
       </div>
@@ -849,7 +434,7 @@
     </footer>
   </main>
 
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 
 </html>
