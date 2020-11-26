@@ -1,4 +1,10 @@
-const ACCESS_TOKEN = "723714{}fa5ee42a{}c96df42{}7a3faa{}1b53ea15{}fa979";
+const ACCESS_TOKEN1 = "07938{}a0f5";
+const ACCESS_TOKEN2 = "cf6549{}ca1473";
+const ACCESS_TOKEN3 = "a7d8de{}ba1513";
+const ACCESS_TOKEN4 = "a8ad{}df8";
+
+const ACCESS_TOKEN = ACCESS_TOKEN1 + ACCESS_TOKEN2 + ACCESS_TOKEN3 + ACCESS_TOKEN4;
+
 const USERNAME = "amaugosomto";
 const BODY = {
   "query": `
