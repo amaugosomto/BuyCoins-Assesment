@@ -46,7 +46,6 @@ function fetchData(){
 }
 
 function appendData(data){
-  console.log(data)
 
   let repositories = data.repositories.nodes;
   let repoCountElements = document.getElementsByClassName("repoCount");
@@ -89,32 +88,6 @@ function appendData(data){
 
   for (let i = 0; i < repositories.length; i++) {
     let repository = repositories[i];
-    let spanColor = "";
-
-    switch (repository.primaryLanguage.name.toLowerCase()) {
-      case "html":
-        spanColor = "red";
-        break;
-      
-      case "vue":
-        spanColor = "blue";
-        break;
-
-      case "c#":
-        spanColor = "green";
-        break;
-
-      case "css":
-        spanColor = "purple";
-        break;
-
-      case "typescript":
-        spanColor = "darkgreen";
-        break;
-
-      default:
-        break;
-    }
 
     repositoryELements += `
       <div>
@@ -130,7 +103,7 @@ function appendData(data){
             <span>${repository.parent.description != null ? repository.parent.description : ``}</span>`: ``}
           <div>
             <span>
-              <span class="${spanColor}"></span>
+              <span style="background: ${repository.primaryLanguage.color} !important"></span>
               <span>${repository.primaryLanguage.name}</span>
             </span>
             ${repository.isFork ? 

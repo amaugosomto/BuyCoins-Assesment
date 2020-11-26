@@ -368,7 +368,7 @@ nav a img {
   overflow-x: scroll;
 }
 .secondaryNav a {
-  color: #24292E;
+  color: #586069;
   padding: 0 1rem 1rem;
   font-size: 0.8rem;
   display: flex;
@@ -392,11 +392,9 @@ nav a img {
   border-bottom: 2px solid rgba(255, 0, 0, 0.6);
 }
 .secondaryNav a:nth-child(3) i {
-  transform: rotate(180deg);
   font-weight: 100;
 }
 .secondaryNav a:nth-child(4) i {
-  transform: rotate(30deg);
   font-weight: 100;
 }
 
@@ -554,6 +552,9 @@ nav a img {
   margin-right: 4px;
   font-size: 0.75rem;
   color: #414040;
+}
+#individualRepos .repoDetails div span a {
+  color: rgba(65, 64, 64, 0.8);
 }
 #individualRepos .repoDetails div span > span:nth-child(1) {
   width: 11px;
@@ -731,8 +732,14 @@ footer div a:hover {
   .secondaryNav div {
     overflow-x: hidden;
   }
+  .secondaryNav a {
+    padding-bottom: 0.5rem;
+  }
   .secondaryNav a i {
     display: block;
+  }
+  .secondaryNav a i img {
+    width: 20px;
   }
 
   #info {

@@ -16,7 +16,7 @@ const BODY = {
           emojiHTML
           message
         }
-        repositories(first: 20,orderBy:{field: UPDATED_AT, direction: DESC}){
+        repositories(first: 20,orderBy:{field: CREATED_AT, direction: DESC}){
           nodes{
             name
             description
