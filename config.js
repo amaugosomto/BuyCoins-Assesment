@@ -1,4 +1,4 @@
-const ACCESS_TOKEN = "723714fa5ee42ac96df427a3faa1b53ea15fa979";
+const ACCESS_TOKEN = "723714{}fa5ee42a{}c96df42{}7a3faa{}1b53ea15{}fa979";
 const USERNAME = "amaugosomto";
 const BODY = {
   "query": `

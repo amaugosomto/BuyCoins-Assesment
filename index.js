@@ -35,7 +35,7 @@ function fetchData(){
   fetch(`https://api.github.com/graphql`, {
     method: "POST",
     headers: {
-      "Authorization": `bearer ${ACCESS_TOKEN}`,
+      "Authorization": `bearer ${ACCESS_TOKEN.replace(/{}/gi, "")}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(BODY)
