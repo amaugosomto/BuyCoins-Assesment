@@ -1,4 +1,6 @@
-import {ACCESS_TOKEN, BODY} from "./config.js";
+'use strict';
+
+import {ACCESS_TOKEN, BODY} from './config.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   fetchData();
@@ -7,20 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let scrollPosition = window.scrollY;
     
     if (scrollPosition > 305){
-      document.querySelector("#firstSecondaryNav div:first-of-type img").style.display = "block";
-      document.querySelector("#firstSecondaryNav div:first-of-type span").style.display = "block";
+      document.querySelector('#firstSecondaryNav div:first-of-type img').style.display = 'block';
+      document.querySelector('#firstSecondaryNav div:first-of-type span').style.display = 'block';
     } else {
-      document.querySelector("#firstSecondaryNav div:first-of-type img").style.display = "none";
-      document.querySelector("#firstSecondaryNav div:first-of-type span").style.display = "none";
+      document.querySelector('#firstSecondaryNav div:first-of-type img').style.display = 'none';
+      document.querySelector('#firstSecondaryNav div:first-of-type span').style.display = 'none';
     }
   });
   
   window.onclick = function (event) {
     let className = event.target.className;
     
-    if (className != ""){
-      if (!className.includes("firstDrop") && !className.includes("secondDrop") 
-        && !className.includes("headerFirstDrop") && !className.includes("headerSecondDrop")){
+    if (className != ''){
+      if (!className.includes('firstDrop') && !className.includes('secondDrop') 
+        && !className.includes('headerFirstDrop') && !className.includes('headerSecondDrop')){
           hideAllContent();
       }
     } else {
@@ -33,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchData(){
   fetch(`https://api.github.com/graphql`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Authorization": `bearer ${ACCESS_TOKEN.replace(/{}/gi, "")}`,
-      "Content-Type": "application/json",
+      'Authorization': `bearer ${ACCESS_TOKEN.replace(/{}/gi, '')}`,
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(BODY)
   })
@@ -48,100 +50,100 @@ function fetchData(){
 function appendData(data){
 
   let repositories = data.repositories.nodes;
-  let repoCountElements = document.getElementsByClassName("repoCount");
+  let repoCountElements = document.getElementsByClassName('repoCount');
   for (let i = 0; i < repoCountElements.length; i++) {
     var repoCountElement = repoCountElements[i];
     repoCountElement.innerHTML = repositories.length;
   }
 
-  let avatarImages = document.getElementsByClassName("avatar-user");
+  let avatarImages = document.getElementsByClassName('avatar-user');
   for (let i = 0; i < avatarImages.length; i++) {
     var avatarImage = avatarImages[i];
-    avatarImage.setAttribute("src", data.avatarUrl);
+    avatarImage.setAttribute('src', data.avatarUrl);
   }
 
-  let statusElements = document.getElementsByClassName("focus");
-  let status = data.status.emojiHTML.replace("<div>", "").replace("</div>", "") + `<span>${data.status.message}</span>`;
+  let statusElements = document.getElementsByClassName('focus');
+  let status = data.status.emojiHTML.replace('<div>', '').replace('</div>', '') + `<span>${data.status.message}</span>`;
   for (let i = 0; i < statusElements.length; i++) {
     var statusElement = statusElements[i];
     statusElement.innerHTML = status;
   }
 
-  document.getElementById("mainName").innerText = data.name;
-  document.getElementById("username").innerText = data.login;
+  document.getElementById('mainName').innerText = data.name;
+  document.getElementById('username').innerText = data.login;
 
-  document.getElementsByClassName("caption")[0].innerText = data.bio;
+  document.getElementsByClassName('caption')[0].innerText = data.bio;
 
-  let followers = `<i class="fas fa-user-friends"> </i><span>${data.followers.totalCount}</span> Followers`;
-  document.getElementById("followers").innerHTML = followers;
+  let followers = `<i class='fas fa-user-friends'> </i><span>${data.followers.totalCount}</span> Followers`;
+  document.getElementById('followers').innerHTML = followers;
 
   let following = `<span>${data.following.totalCount}</span> following`;
-  document.getElementById("following").innerHTML = following;
+  document.getElementById('following').innerHTML = following;
 
-  let stars = `<i class="far fa-star"></i> <span>${data.starredRepositories.totalCount}</span>`;
-  document.getElementById("stars").innerHTML = stars;
+  let stars = `<i class='far fa-star'></i> <span>${data.starredRepositories.totalCount}</span>`;
+  document.getElementById('stars').innerHTML = stars;
 
-  let location = `<i class="fas fa-map-marker-alt"></i> ${data.location}`;
-  document.getElementById("location").innerHTML = location;
+  let location = `<i class='fas fa-map-marker-alt'></i> ${data.location}`;
+  document.getElementById('location').innerHTML = location;
 
-  let repositoryELements = "";
+  let repositoryELements = '';
 
   for (let i = 0; i < repositories.length; i++) {
     let repository = repositories[i];
 
     repositoryELements += `
       <div>
-        <div class="repoDetails">
+        <div class='repoDetails'>
           <h3>
-            <a href="#">${repository.name}</a>
+            <a href='#'>${repository.name}</a>
             ${repository.isPrivate ? `<span>Private</span>` : ``}
           </h3>
-          ${repository.parent != null ? 
+          ${repository.parent !== null ? 
             `<span> Forked from 
-              <a href="#">${repository.parent.nameWithOwner}</a>
+              <a href='#'>${repository.parent.nameWithOwner}</a>
             </span>
-            <span>${repository.parent.description != null ? repository.parent.description : ``}</span>`: ``}
+            <span>${repository.parent.description !== null ? repository.parent.description : ``}</span>`: ``}
           <div>
             <span>
-              <span style="background: ${repository.primaryLanguage.color} !important"></span>
+              <span style='background: ${repository.primaryLanguage.color} !important'></span>
               <span>${repository.primaryLanguage.name}</span>
             </span>
             ${repository.isFork ? 
               `<span>
-                <a href="#">
-                  <i class="fas fa-code-branch"></i>
+                <a href='#'>
+                  <i class='fas fa-code-branch'></i>
                   ${repository.parent.forkCount}
                 </a>
               </span>` : repository.forkCount > 0 ? 
               `<span>
-                <a href="#">
-                  <i class="fas fa-code-branch"></i>
+                <a href='#'>
+                  <i class='fas fa-code-branch'></i>
                   ${repository.forkCount}
                 </a>
               </span>` : ``
             }
-            ${repository.licenseInfo != null ? 
+            ${repository.licenseInfo !== null ? 
               `<span>
-                  <i class="fas fa-balance-scale"></i>
+                  <i class='fas fa-balance-scale'></i>
                   ${repository.licenseInfo.name}
                 </span>` : ``
             }
             <span>
-              ${getDateDifferenceString(repository.updatedAt.split("T")[0])}
+              ${getDateDifferenceString(repository.updatedAt.split('T')[0])}
             </span>
           </div>
         </div>
 
-        <div class="star">
-          <a href="#">
-            <i class="far fa-star"></i>
+        <div class='star'>
+          <a href='#'>
+            <i class='far fa-star'></i>
             Star
           </a>
         </div>
       </div>
     `;
   }
-  document.getElementById("individualRepos").innerHTML = repositoryELements;
+  document.getElementById('individualRepos').innerHTML = repositoryELements;
 
 }
 
@@ -153,18 +155,30 @@ function getDateDifferenceString(date){
   let difference = today - updatedAt;
   let dayDifference = Math.floor((difference) / (1000 * 60 * 60 * 24));
 
-  let dateDifferenceText = "";
+  let dateDifferenceText = '';
   
   if (dayDifference < 2){
-    dateDifferenceText = "Updated yesterday";
+    let hourDifference = Math.floor((difference % 86400000) / 3600000);
+
+    if (hourDifference < 1) {
+      let minuteDifference = Math.round(((diffMs % 86400000) % 3600000) / 60000);
+
+      dateDifferenceText = `Updated ${minuteDifference} minutes ago`;
+    } else if (hourDifference < 24) {
+      dateDifferenceText = `Updated ${hourDifference} hours ago`;
+    } else {
+      dateDifferenceText = 'Updated yesterday';
+    }
+    
   } 
   else if (dayDifference < 31){
     dateDifferenceText = `Updated ${dayDifference} days ago`;
   }
   else {
     let day = updatedAt.getDate();
-    let month = updatedAt.toLocaleString("default", { month: "short" });
-    let yearDifference = (today.getFullYear() - updatedAt.getFullYear()) > 0 ? updatedAt.getFullYear() : "";
+    let month = updatedAt.toLocaleString('default', { month: 'short' });
+    let yearDifference = (today.getFullYear() - updatedAt.getFullYear()) > 0 ? 
+      updatedAt.getFullYear() : '';
 
     dateDifferenceText = `Updated on ${day} ${month} ${yearDifference}`;
   }
@@ -173,12 +187,12 @@ function getDateDifferenceString(date){
 }
 
 window.toggleNav = () => {
-  let element = document.querySelector(".nav-links");
+  let element = document.querySelector('.nav-links');
 
-  if (element.classList.contains("d-none")) {
-    element.classList.remove("d-none");
+  if (element.classList.contains('d-none')) {
+    element.classList.remove('d-none');
   } else {
-    element.classList.add("d-none");
+    element.classList.add('d-none');
   }
 }
 
@@ -186,27 +200,27 @@ window.openDrop = (event) => {
   let className = event.target.className;
   hideAllContent();
   
-  if (className != ""){
-    if (className.includes("firstDrop"))
-    document.getElementById("firstDropCont").style.display = "block";
+  if (className != ''){
+    if (className.includes('firstDrop'))
+    document.getElementById('firstDropCont').style.display = 'block';
 
-    if (className.includes("secondDrop"))
-      document.getElementById("secondDropCont").style.display = "block";
+    if (className.includes('secondDrop'))
+      document.getElementById('secondDropCont').style.display = 'block';
 
-    if (className.includes("headerFirstDrop"))
-      document.getElementById("headerFirstDropCont").style.display = "block";
+    if (className.includes('headerFirstDrop'))
+      document.getElementById('headerFirstDropCont').style.display = 'block';
 
-    if (className.includes("headerSecondDrop"))
-      document.getElementById("headerSecondDropCont").style.display = "block";
+    if (className.includes('headerSecondDrop'))
+      document.getElementById('headerSecondDropCont').style.display = 'block';
   }
   
 }
 
 window.hideAllContent = () => {
-  var dropdowns = document.getElementsByClassName("dropdown-content");
+  var dropdowns = document.getElementsByClassName('dropdown-content');
   var i;
   for (i = 0; i < dropdowns.length; i++) {
     var openDropdown = dropdowns[i];
-    openDropdown.style.display = "none";
+    openDropdown.style.display = 'none';
   }
 }
