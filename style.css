@@ -81,6 +81,17 @@ header .dropdown-content .dropContents a:hover {
   background: #0366d6;
   color: #fff;
 }
+header #imgLink img {
+  max-height: 20px !important;
+  max-width: 20px !important;
+}
+header #notifs a i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+header #headerDrop div:not(:first-of-type) {
+  padding-bottom: 0.5rem;
+}
 header #profileOptions img {
   width: 1.3rem;
   border-radius: 50%;
