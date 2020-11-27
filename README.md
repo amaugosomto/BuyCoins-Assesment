@@ -11,12 +11,13 @@ I saw this as an opportunity to learn something new and ofcourse the possibility
 
 ![code style](https://img.shields.io/badge/code%20style-standard-brightgreen)
 
-## Built with
+## Tools Used
 
 - HTML5
 - CSS3
 - JavaScript
 - GitHub Graphql API
+- Netlify
 
 ## How to use
 
