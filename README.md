@@ -1,6 +1,7 @@
 # BuyCoins | GitHub Repositories Page Clone
 
-This project is a re-creation my github repositories page leveraging the GitHub Graphql API
+This project is a re-creation my github repositories page leveraging the GitHub Graphql API. This
+[project](https://somtoamaugo-buycoins-assessment.netlify.app/) is hosted on netlify.
 
 ## Motivation
 
